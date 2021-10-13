@@ -19,7 +19,7 @@ public class CustomerService {
 		Optional<Customer> optCustomer = customerRepository.findById(id);	
 	
 		if (optCustomer.isEmpty()) {
-			return "Bad customer id";
+			return "Error:404";
 		} else {
 			Customer customer = optCustomer.get();
 			return greeting + " " + customer.getFirstName() + " " + customer.getLastName() + " !";

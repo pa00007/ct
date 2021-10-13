@@ -15,7 +15,8 @@ public class CustomerController {
 	CustomerService customerService;
 	
 	@GetMapping("customer/{id}/generateGreeting")
-	public String generateGreeting(@PathVariable int id, @RequestParam (required = false) String greeting) {
+	public String generateGreeting(@PathVariable Integer id, @RequestParam (required = false) String greeting) {
+
 		if (greeting == null || greeting.isEmpty()) {
 			return customerService.generatedGreeting(id, "Hi");
 		} else {
